@@ -24,10 +24,14 @@ function Register() {
 
       alert("Registration successful. Please log in.");
       navigate("/");
-    } catch (err) {
+      } catch (err) {
+    if (err.code === "auth/email-already-in-use") {
+      setError("Email already in use. Please use a different email.");
+    } else {
       setError(err.message);
     }
-  };
+  }
+};
 
   return (
     <div className="container">

@@ -1,16 +1,11 @@
 /* src/pages/Login.css */
-body {
-  background: linear-gradient(to right, #ffd6e0, #ffe6f0);
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+
 
 .container {
-  max-width: 400px;
+  max-width: 600px;
   margin: 80px auto;
   background-color: #fff0f6;
-  padding: 30px;
+  padding: 70px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
   text-align: center;

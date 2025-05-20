@@ -1,3 +1,18 @@
 @import './Dashboard.css';
 @import './Login.css';
 @import './PartnerVerification.css';
+
+
+
+body  {
+   display: flex;
+  justify-content: center; 
+  align-items: center;  
+  background: linear-gradient(to bottom right, #ffe0f0, #ffe9f5);
+  font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+}

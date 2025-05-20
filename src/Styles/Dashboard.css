@@ -1,12 +1,5 @@
 /* src/pages/Dashboard.css */
 
-body {
-  background: linear-gradient(to bottom right, #ffe0f0, #ffe9f5);
-  font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
-  margin: 0;
-  padding: 0;
-}
-
 .dashboard-container {
   max-width: 600px;
   margin: 50px auto;

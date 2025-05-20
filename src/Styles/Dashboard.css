@@ -25,13 +25,16 @@ textarea {
   border: 2px solid #ffb3d1;
   border-radius: 15px;
   background-color: #fff9fc;
-  font-size: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
   box-shadow: inset 0 0 5px #ffe3ef;
+  font-family: "Indie Flower", cursive;
 }
 
 textarea {
   height: 120px;
   resize: none;
+  font-family: "Indie Flower", cursive;
 }
 
 button {
@@ -42,8 +45,10 @@ button {
   padding: 10px 20px;
   margin: 10px 5px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   transition: all 0.2s ease-in-out;
+  font-family: "Indie Flower", cursive;
 }
 
 button:hover {

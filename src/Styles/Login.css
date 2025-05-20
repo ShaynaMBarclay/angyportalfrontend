@@ -13,12 +13,13 @@
 
 h1, h2 {
   color: #ff69b4;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+   font-family: "Dancing Script", cursive;
 }
 
 form {

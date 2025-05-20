@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAuth } from "firebase/auth"; 
+import { getAuth, updatePassword } from "firebase/auth"; 
 
 function Dashboard() {
   const [partnerEmail, setPartnerEmail] = useState("");
   const [grievance, setGrievance] = useState("");
   const [message, setMessage] = useState("");
   const [isVerified, setIsVerified] = useState(false);
+  const [showPasswordInput, setShowPasswordInput] = useState(false);
+  const [newPassword, setNewPassword] = useState("");
   const navigate = useNavigate();
 
   // Logout function
@@ -14,6 +16,28 @@ function Dashboard() {
     localStorage.removeItem("token");
     navigate("/");
   }
+
+  //change password 
+function changePassword(newPassword) {
+  const auth = getAuth();
+  const user = auth.currentUser;
+
+  if (user) {
+    updatePassword(user, newPassword)
+      .then(() => {
+        alert("Password updated successfully.");
+      })
+      .catch((error) => {
+        if (error.code === "auth/requires-recent-login") {
+          alert("Please log in again and try.");
+        } else {
+          alert("Error updating password: " + error.message);
+        }
+      });
+  } else {
+    alert("No user is logged in.");
+  }
+}
 
   useEffect(() => {
     async function fetchTokenAndValidate() {
@@ -95,19 +119,36 @@ function Dashboard() {
     setMessage(res.ok ? "Grievance sent!" : data.error || "Failed to send grievance.");
 
     if (res.ok) {
-      setGrievance("");  // <-- Clear the textarea here
+      setGrievance("");  
     }
   } catch (err) {
     setMessage("Error: " + err.message);
   }
 }
 
-  return (
+   return (
     <div className="dashboard-container">
       <div className="header-row">
         <h2>Dashboard</h2>
-        <button onClick={logout} className="logout-button">🚪 Logout</button>
+        <div className="button-group">
+          <button className="change-password-button" onClick={() => setShowPasswordInput(!showPasswordInput)}>
+            Change Password
+          </button>
+          <button onClick={logout} className="logout-button">🚪 Logout</button>
+        </div>
       </div>
+
+      {showPasswordInput && (
+        <>
+          <input
+            type="password"
+            placeholder="New Password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+          />
+          <button onClick={() => changePassword(newPassword)}>Submit New Password</button>
+        </>
+      )}
 
       <input
         type="email"

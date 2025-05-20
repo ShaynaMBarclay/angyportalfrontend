@@ -94,6 +94,10 @@ function Dashboard() {
       const data = await res.json();
       setMessage(res.ok ? "Grievance sent!" : data.error || "Failed to send grievance.");
     } catch (err) {
+
+       if (res.ok) {
+      setGrievance("");
+      
       setMessage("Error: " + err.message);
     }
   }

@@ -9,6 +9,7 @@ function Dashboard() {
   const [isVerified, setIsVerified] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const [showPasswordInput, setShowPasswordInput] = useState(false);
+  const [senderName, setSenderName] = useState("");
   const navigate = useNavigate();
 
   // Logout function
@@ -114,7 +115,7 @@ function changePassword() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ partnerEmail, grievance }),
+      body: JSON.stringify({ partnerEmail, grievance, senderName }),
     });
     const data = await res.json();
     setMessage(res.ok ? "Grievance sent!" : data.error || "Failed to send grievance.");
@@ -165,6 +166,13 @@ function changePassword() {
 
       {isVerified ? (
         <>
+        <input
+  type="text"
+  placeholder="Your Name"
+  value={senderName}
+  onChange={(e) => setSenderName(e.target.value)}
+/>
+
           <textarea
             placeholder="Write your grievance 😤"
             value={grievance}

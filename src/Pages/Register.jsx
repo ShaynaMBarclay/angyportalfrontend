@@ -56,6 +56,13 @@ function Register() {
         </label>
         <button type="submit">🌷 Register</button>
       </form>
+       <button
+        type="button"
+        onClick={() => navigate("/")}
+        style={{ marginTop: "1rem" }}
+      >
+        🔑 Login
+      </button>
     </div>
   );
 }

@@ -79,3 +79,25 @@ button:hover {
   margin-right: 5px;
   color: #ff69b4;
 }
+
+
+
+/* Even smaller devices, like phones */
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+    padding: 30px 20px;
+    margin: 20px auto;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  h1, h2 {
+    font-size: 1.3rem;
+  }
+}

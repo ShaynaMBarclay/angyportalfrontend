@@ -16,3 +16,48 @@ body  {
   min-height: 100vh;
   box-sizing: border-box;
 }
+
+
+/* Responsive adjustments for tablets and mobiles */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 400px;  
+    margin: auto;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 10px;
+  }
+
+  input, button {
+    font-size: 1.1rem;
+     max-width: 90%; 
+     width: 100%;     
+     box-sizing: border-box;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Even smaller devices, like phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    max-width: 320px;
+  }
+
+  input, button {
+    font-size: 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.25rem;
+  }
+}

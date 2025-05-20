@@ -6,7 +6,7 @@
   background: #fff0fa;
   border: 3px dashed #ffaad4;
   border-radius: 20px;
-  padding: 30px;
+  padding: 50px;
   text-align: center;
   box-shadow: 0 0 15px #f7c2dd;
 }
@@ -86,4 +86,30 @@ textarea::placeholder {
 .logout-button:hover {
   background-color: #ff6c9c;
   transform: scale(1.05);
+}
+
+
+/* Even smaller devices like phones */
+@media (max-width: 480px) {
+  .dashboard-container {
+    max-width: 95%;
+    padding: 20px 15px;
+    margin: 20px auto;
+  }
+
+  input,
+  textarea {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  button,
+  .logout-button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
 }

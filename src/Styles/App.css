@@ -26,6 +26,22 @@ body  {
 
 
 /* Responsive adjustments for tablets and mobiles */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 500px;
+    padding: 2rem;
+  }
+
+  input, button {
+    font-size: 1.1rem;
+  }
+
+  h1, h2 {
+    font-size: 2rem;
+  }
+}
+
+
 @media (max-width: 768px) {
   body {
     padding: 1rem;

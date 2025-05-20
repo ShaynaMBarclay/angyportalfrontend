@@ -7,8 +7,8 @@ function Dashboard() {
   const [grievance, setGrievance] = useState("");
   const [message, setMessage] = useState("");
   const [isVerified, setIsVerified] = useState(false);
-  const [showPasswordInput, setShowPasswordInput] = useState(false);
   const [newPassword, setNewPassword] = useState("");
+  const [showPasswordInput, setShowPasswordInput] = useState(false);
   const navigate = useNavigate();
 
   // Logout function
@@ -18,7 +18,7 @@ function Dashboard() {
   }
 
   //change password 
-function changePassword(newPassword) {
+function changePassword() {
   const auth = getAuth();
   const user = auth.currentUser;
 
@@ -26,6 +26,8 @@ function changePassword(newPassword) {
     updatePassword(user, newPassword)
       .then(() => {
         alert("Password updated successfully.");
+        setNewPassword("");           // Clear the input
+        setShowPasswordInput(false);  // Hide the password box
       })
       .catch((error) => {
         if (error.code === "auth/requires-recent-login") {
@@ -38,7 +40,6 @@ function changePassword(newPassword) {
     alert("No user is logged in.");
   }
 }
-
   useEffect(() => {
     async function fetchTokenAndValidate() {
       try {

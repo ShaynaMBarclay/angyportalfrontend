@@ -34,6 +34,7 @@ function Register() {
 };
 
   return (
+  
     <div className="container">
       <h2><FaStar className="icon" /> Register</h2>
       {error && <p className="error">{error}</p>}
@@ -59,14 +60,15 @@ function Register() {
           />
         </label>
         <button type="submit">🌷 Register</button>
-      </form>
-       <button
+
+          <button
         type="button"
         onClick={() => navigate("/")}
-        style={{ marginTop: "1rem" }}
       >
         🔑 Login
       </button>
+      </form>
+     
     </div>
   );
 }

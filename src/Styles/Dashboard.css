@@ -1,0 +1,96 @@
+/* src/pages/Dashboard.css */
+
+body {
+  background: linear-gradient(to bottom right, #ffe0f0, #ffe9f5);
+  font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff0fa;
+  border: 3px dashed #ffaad4;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 15px #f7c2dd;
+}
+
+h2 {
+  color: #d63384;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ffb3d1;
+  border-radius: 15px;
+  background-color: #fff9fc;
+  font-size: 1rem;
+  box-shadow: inset 0 0 5px #ffe3ef;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+button {
+  background-color: #ff8fb2;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #ff6c9c;
+  transform: scale(1.05);
+}
+
+p {
+  margin-top: 15px;
+  color: #a83265;
+  font-weight: bold;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+  font-style: italic;
+  color: #c76992;
+}
+
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logout-button {
+  background-color:  #d63384;;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+  background-color: #ff6c9c;
+  transform: scale(1.05);
+}

@@ -2,9 +2,9 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaHeart, FaEnvelope, FaLock } from "react-icons/fa";
-
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";               
-import { signInWithEmailAndPassword } from "firebase/auth";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -32,11 +32,19 @@ function Login() {
 
     // 🔁 Redirect to dashboard
     navigate("/dashboard");
-  } catch (err) {
+    } catch (err) {
+  // Map Firebase error codes to friendly messages
+  if (err.code === "auth/wrong-password" || err.code === "auth/invalid-credential") {
+    setError("Wrong password. Please try again.");
+  } else if (err.code === "auth/user-not-found") {
+    setError("No user found with that email.");
+  } else if (err.code === "auth/invalid-email") {
+    setError("Invalid email format.");
+  } else {
     setError(err.message);
   }
-};
-
+}
+}
 
   return (
     <div className="container">

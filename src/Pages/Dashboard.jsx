@@ -27,8 +27,8 @@ function changePassword() {
     updatePassword(user, newPassword)
       .then(() => {
         alert("Password updated successfully.");
-        setNewPassword("");           // Clear the input
-        setShowPasswordInput(false);  // Hide the password box
+        setNewPassword("");           
+        setShowPasswordInput(false);  
       })
       .catch((error) => {
         if (error.code === "auth/requires-recent-login") {

@@ -6,7 +6,7 @@
   background: #fff0fa;
   border: 3px dashed #ffaad4;
   border-radius: 20px;
-  padding: 30px;
+  padding: 40px;
   text-align: center;
   box-shadow: 0 0 20px #f57dbb;
 }
@@ -75,6 +75,7 @@ textarea::placeholder {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  gap: 1.5rem;
 }
 
 .logout-button {

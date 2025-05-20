@@ -80,27 +80,27 @@ function Dashboard() {
   }
 }
 
-  async function submitGrievance() {
-    const token = localStorage.getItem("token");
-    try {
-      const res = await fetch("https://angyportalserver.onrender.com/api/send-grievance", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ partnerEmail, grievance }),
-      });
-      const data = await res.json();
-      setMessage(res.ok ? "Grievance sent!" : data.error || "Failed to send grievance.");
-    } catch (err) {
+ async function submitGrievance() {
+  const token = localStorage.getItem("token");
+  try {
+    const res = await fetch("https://angyportalserver.onrender.com/api/send-grievance", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ partnerEmail, grievance }),
+    });
+    const data = await res.json();
+    setMessage(res.ok ? "Grievance sent!" : data.error || "Failed to send grievance.");
 
-       if (res.ok) {
-      setGrievance("");
-      
-      setMessage("Error: " + err.message);
+    if (res.ok) {
+      setGrievance("");  // <-- Clear the textarea here
     }
+  } catch (err) {
+    setMessage("Error: " + err.message);
   }
+}
 
   return (
     <div className="dashboard-container">

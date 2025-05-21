@@ -10,7 +10,9 @@ function Dashboard() {
   const [newPassword, setNewPassword] = useState("");
   const [showPasswordInput, setShowPasswordInput] = useState(false);
   const [senderName, setSenderName] = useState("");
+  const [angyLevel, setAngyLevel] = useState(null);
   const navigate = useNavigate();
+
 
   // Logout function
   function logout() {
@@ -115,7 +117,7 @@ function changePassword() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ partnerEmail, grievance, senderName }),
+      body: JSON.stringify({ partnerEmail, grievance, senderName,  angyLevel: Number(angyLevel) }),
     });
     const data = await res.json();
     setMessage(res.ok ? "Grievance sent!" : data.error || "Failed to send grievance.");
@@ -172,6 +174,19 @@ function changePassword() {
   value={senderName}
   onChange={(e) => setSenderName(e.target.value)}
 />
+       <div className="angy-level-section">
+  <label htmlFor="angyLevel">How angy are you? (1 = Cool 😎, 10 = Very Angy 😡)</label>
+  <input
+    type="range"
+    id="angyLevel"
+    min="1"
+    max="10"
+    value={angyLevel || 5}
+    onChange={(e) => setAngyLevel(e.target.value)}
+  />
+  <p>Your angy level: {angyLevel || 5}</p>
+</div>
+
 
           <textarea
             placeholder="Write your grievance 😤"

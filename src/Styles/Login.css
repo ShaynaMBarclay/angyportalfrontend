@@ -89,18 +89,18 @@ button:hover {
 @media (max-width: 480px) {
   .container {
     max-width: 95%;
-    padding: 30px 20px;
+    padding: 40px 35px !important;
     margin: 20px auto;
   }
 
   input[type="email"],
   input[type="password"],
   button {
-    font-size: 1rem;
-    padding: 12px;
+    font-size: 0.7rem;
+    padding: 14px;
   }
 
   h1, h2 {
-    font-size: 1.3rem;
+    font-size: 1.8rem !important;
   }
 }

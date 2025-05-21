@@ -5,10 +5,13 @@ import PartnerVerify from "./Pages/PartnerVerify";
 import Register from "./Pages/Register";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import "./Styles/App.css";
+import ScrollReset from "./Components/ScrollReset";
+
 
 function App() {
   return (
     <Router>
+      <ScrollReset />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />

@@ -5,6 +5,7 @@ import { FaEnvelope, FaLock, FaStar } from "react-icons/fa";
 
 import { auth } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import ScrollingBanner from "../Components/ScrollingBanner"; 
 
 function Register() {
   const navigate = useNavigate();
@@ -34,7 +35,8 @@ function Register() {
 };
 
   return (
-  
+   <>
+    <ScrollingBanner />
     <div className="container">
       <h2><FaStar className="icon" /> Register</h2>
       {error && <p className="error">{error}</p>}
@@ -68,8 +70,8 @@ function Register() {
         🔑 Login
       </button>
       </form>
-     
     </div>
+    </>
   );
 }
 

@@ -1,0 +1,61 @@
+.scrolling-banner {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #d63384;
+  font-weight: bold;
+  padding: 8px 0;
+  position: relative;
+  background: linear-gradient(90deg, #ffefff, #ffe6f2);
+  border-bottom: 2px solid #ffb6c1;
+}
+
+/* Base (desktop) */
+.scrolling-banner {
+  font-size: 1.5rem;
+}
+
+.scrolling-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+
+.scrolling-content span {
+  display: inline-block;
+  padding-right: 2rem;
+}
+
+/* Tablet (max width 1024px) */
+@media (max-width: 1024px) {
+  .scrolling-banner {
+    font-size: 2rem; 
+    padding: 6px 0;
+  }
+
+  .scrolling-content span {
+    padding-right: 1.5rem; 
+  }
+}
+
+/* Mobile (max width 600px) */
+@media (max-width: 600px) {
+  .scrolling-banner {
+    font-size: 1.3rem; 
+    padding: 4px 0;
+    margin-bottom: 2rem;
+  }
+
+  .scrolling-content span {
+    padding-right: 1rem; 
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

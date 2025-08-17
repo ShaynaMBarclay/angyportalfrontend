@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaHeart, FaEnvelope, FaLock } from "react-icons/fa";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";               
+import { auth } from "../firebase";    
+import ScrollingBanner from "../Components/ScrollingBanner";          
 
 
 function Login() {
@@ -26,14 +27,11 @@ function Login() {
       formData.password
     );
 
-    // 🔥 Get and store Firebase token
     const token = await userCredential.user.getIdToken();
     localStorage.setItem("token", token);
 
-    // 🔁 Redirect to dashboard
     navigate("/dashboard");
     } catch (err) {
-  // Map Firebase error codes to friendly messages
   if (err.code === "auth/wrong-password" || err.code === "auth/invalid-credential") {
     setError("Wrong password. Please try again.");
   } else if (err.code === "auth/user-not-found") {
@@ -47,6 +45,8 @@ function Login() {
 }
 
   return (
+    <>
+    <ScrollingBanner />
     <div className="container">
       <h1><FaHeart className="icon" /> Login</h1>
       {error && <p className="error">{error}</p>}
@@ -77,6 +77,7 @@ function Login() {
         </button>
       </form>
     </div>
+    </>
   );
 }
 

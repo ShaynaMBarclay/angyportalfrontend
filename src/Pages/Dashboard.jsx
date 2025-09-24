@@ -99,7 +99,7 @@ function changePassword() {
         body: JSON.stringify({ partnerEmail }),
       });
       const data = await res.json();
-      setMessage(res.ok ? "Verification email sent!" : data.error || "Failed to send verification.");
+      setMessage(res.ok ? "Verification email sent! Please check in your spam folder if you don't see the email." : data.error || "Failed to send verification.");
        if (!res.ok) {
       console.log("Backend error details:", data.details);
     }
@@ -120,7 +120,7 @@ function changePassword() {
       body: JSON.stringify({ partnerEmail, grievance, senderName,  angyLevel: Number(angyLevel) }),
     });
     const data = await res.json();
-    setMessage(res.ok ? "Grievance sent!" : data.error || "Failed to send grievance.");
+    setMessage(res.ok ? "Grievance sent! Please check in your spam folder if you don't see the email." : data.error || "Failed to send grievance.");
 
     if (res.ok) {
       setGrievance("");  
